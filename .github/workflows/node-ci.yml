@@ -37,3 +37,6 @@ jobs:
       # Step 5: Build application
       - name: Build Application
         run: npm run build --if-present
+      - name: Build Docker Image
+        run: |
+          docker build -t node-aks-api:v1 .
