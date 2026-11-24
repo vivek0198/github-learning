@@ -1,10 +1,12 @@
 function login(email, password) {
 
     if (!email || !password) {
-        return "Email and password required";
+        throw new Error("Email and password required");
+    }
+
+    if (!email.includes("@")) {
+        throw new Error("Invalid email");
     }
 
     return "Login successful";
 }
-
-console.log(login("test@gmail.com", "123456"));
